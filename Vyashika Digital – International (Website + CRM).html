@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vyashika Digital – International</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#e8ecff;--card:#f3f5ff;--tx:#23264a;--mu:#6a6f9c;--ac:#6c63ff;--ac2:#ff7eb3;--sh1:#c6cbf0;--sh2:#ffffff;--ok:#1fa97a;--wa:#e0922b}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b1d33;--card:#23264a;--tx:#eceeff;--mu:#9aa0d0;--sh1:#12142a;--sh2:#2e3260}}
+:root[data-theme=dark]{--bg:#1b1d33;--card:#23264a;--tx:#eceeff;--mu:#9aa0d0;--sh1:#12142a;--sh2:#2e3260}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1080px;margin:auto;padding:16px}
+.clay{background:var(--card);border-radius:24px;box-shadow:9px 9px 18px var(--sh1),-9px -9px 18px var(--sh2)}
+.in{background:var(--card);border-radius:14px;box-shadow:inset 4px 4px 8px var(--sh1),inset -4px -4px 8px var(--sh2)}
+nav{display:flex;gap:10px;align-items:center;padding:10px 14px;margin-bottom:22px;flex-wrap:wrap}
+nav b{font-size:17px;margin-right:auto}
+button,select,input,textarea{font:inherit;color:var(--tx)}
+.tab,.btn{border:0;cursor:pointer;border-radius:14px;padding:9px 16px;background:var(--card);box-shadow:4px 4px 9px var(--sh1),-4px -4px 9px var(--sh2)}
+.tab.on,.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
+input,select,textarea{border:0;border-radius:12px;padding:10px 12px;width:100%;background:var(--card);box-shadow:inset 3px 3px 6px var(--sh1),inset -3px -3px 6px var(--sh2)}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:.2em 0}
+h2{margin:.2em 0 .6em}
+.mu{color:var(--mu)}
+.hero{padding:34px 26px;text-align:center}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.c{padding:20px}
+.price{font-size:30px;font-weight:700}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;background:var(--ac);color:#fff}
+.sec{margin:30px 0}
+.row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:12px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{padding:10px 8px;text-align:left;border-bottom:1px solid var(--sh1);font-size:14px}
+th{color:var(--mu);font-weight:600}
+.st{padding:3px 10px;border-radius:99px;font-size:12px;color:#fff}
+.hide{display:none}
+.kpi{font-size:26px;font-weight:700}
+.flex{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style></head><body><div class="wrap">
+<nav class="clay"><b>Vyashika Digital</b>
+<button class="tab on" id="t1" onclick="show(1)">Website · /international</button>
+<button class="tab" id="t2" onclick="show(2)">CRM · International Clients</button></nav>
+
+<!-- WEBSITE -->
+<div id="v1">
+<section class="clay hero"><span class="tag">Global Clients Welcome</span>
+<h1>Websites, WooCommerce &amp; Marketplace Growth for Businesses Worldwide</h1>
+<p class="mu">Based in India, working with clients in the US, UK, UAE, Australia, Canada and Europe. Clear scope, USD/GBP/EUR pricing, overlap with your time zone.</p>
+<div class="flex" style="justify-content:center"><a class="btn p" href="#inq" style="text-decoration:none">Get a Free Quote</a>
+<a class="btn" href="https://wa.me/919555083044" style="text-decoration:none">WhatsApp +91 95550 83044</a></div></section>
+
+<section class="sec"><h2>Services for international clients</h2><div class="grid">
+<div class="clay c"><b>WordPress &amp; Custom Websites</b><p class="mu">Fast, SEO-ready, multi-page agency and business sites.</p></div>
+<div class="clay c"><b>WooCommerce Stores</b><p class="mu">Payments, shipping and tax set up for your country.</p></div>
+<div class="clay c"><b>Amazon / Flipkart / Shopify</b><p class="mu">Product listings, catalog and store management.</p></div>
+<div class="clay c"><b>Digital Marketing &amp; SEO</b><p class="mu">Local and global SEO, ads and content.</p></div></div></section>
+
+<section class="sec"><div class="flex"><h2 style="margin-right:auto">Pricing</h2>
+<select id="cur" style="width:auto" onchange="renderPrices()"></select></div>
+<div class="grid" id="prices"></div>
+<p class="mu" style="font-size:13px">Prices are indicative and billed in your currency. Final quote after scope review.</p></section>
+
+<section class="sec"><h2>How we work with you</h2><div class="grid">
+<div class="clay c"><b>1 · Discovery call</b><p class="mu">Scheduled in your time zone via Zoom/Meet.</p></div>
+<div class="clay c"><b>2 · Proposal &amp; deposit</b><p class="mu">50% advance by PayPal, Stripe or bank transfer.</p></div>
+<div class="clay c"><b>3 · Build &amp; review</b><p class="mu">Progress visible in your client portal.</p></div>
+<div class="clay c"><b>4 · Launch &amp; support</b><p class="mu">Handover, training and ongoing care.</p></div></div></section>
+
+<section class="sec clay c" id="inq"><h2>Request a quote</h2>
+<div class="row"><input id="f_name" placeholder="Your name"><input id="f_email" type="email" placeholder="Email"><input id="f_co" placeholder="Company"></div>
+<div class="row"><select id="f_country"></select><select id="f_svc"><option>WordPress Website</option><option>WooCommerce Store</option><option>Amazon/Flipkart Listing</option><option>Shopify</option><option>SEO / Marketing</option></select><input id="f_budget" type="number" placeholder="Budget (in your currency)"></div>
+<textarea id="f_msg" rows="3" placeholder="Tell us about your project"></textarea>
+<div class="flex" style="margin-top:12px"><button class="btn p" onclick="submitInq()">Send Inquiry</button><span id="f_ok" class="mu"></span></div>
+<p class="mu" style="font-size:13px">Demo: inquiries appear instantly in the CRM tab as new international leads.</p></section>
+</div>
+
+<!-- CRM -->
+<div id="v2" class="hide">
+<div class="grid" id="kpis"></div>
+<section class="clay c sec"><h2>Add international client</h2>
+<div class="row"><input id="n_name" placeholder="Contact name"><input id="n_co" placeholder="Company"><input id="n_email" placeholder="Email / WhatsApp"></div>
+<div class="row"><select id="n_country"></select><select id="n_svc"><option>WordPress Website</option><option>WooCommerce Store</option><option>Amazon/Flipkart Listing</option><option>Shopify</option><option>SEO / Marketing</option></select><input id="n_val" type="number" placeholder="Deal value (client currency)"></div>
+<button class="btn p" onclick="addClient()">Add Client</button></section>
+
+<section class="clay c sec"><div class="flex"><h2 style="margin-right:auto">International pipeline</h2>
+<select id="flt" style="width:auto" onchange="renderCRM()"><option value="">All stages</option></select>
+<select id="fc" style="width:auto" onchange="renderCRM()"><option value="">All countries</option></select></div>
+<div class="tw"><table><thead><tr><th>Client</th><th>Country</th><th>Local time</th><th>Service</th><th>Value</th><th>≈ INR</th><th>Payment</th><th>Stage</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></section>
+
+<section class="clay c sec"><h2>Exchange rates (1 unit = ₹, editable)</h2><div class="row" id="rates"></div>
+<p class="mu" style="font-size:13px">Update these weekly, or connect a live rates API when the PHP backend is added.</p></section>
+</div></div>
+
+<script>
+const C={US:{n:'United States',cur:'USD',tz:'America/New_York',pay:'Stripe / PayPal'},GB:{n:'United Kingdom',cur:'GBP',tz:'Europe/London',pay:'Wise / PayPal'},AE:{n:'UAE',cur:'AED',tz:'Asia/Dubai',pay:'Bank transfer / Stripe'},AU:{n:'Australia',cur:'AUD',tz:'Australia/Sydney',pay:'Wise / PayPal'},CA:{n:'Canada',cur:'CAD',tz:'America/Toronto',pay:'Stripe / PayPal'},DE:{n:'Germany',cur:'EUR',tz:'Europe/Berlin',pay:'SEPA / Wise'},SG:{n:'Singapore',cur:'SGD',tz:'Asia/Singapore',pay:'Wise / PayPal'},OT:{n:'Other',cur:'USD',tz:'UTC',pay:'PayPal / Wire'}};
+const SYM={USD:'$',GBP:'£',EUR:'€',AED:'AED ',AUD:'A$',CAD:'C$',SGD:'S$'};
+const PK=[{n:'Starter',inr:4999,usd:99,d:'5-page business site, mobile ready, basic SEO'},{n:'Business',inr:7999,usd:149,d:'10 pages, blog, WhatsApp/lead forms, on-page SEO'},{n:'Premium',inr:14999,usd:249,d:'WooCommerce store, payments, speed + SEO setup'}];
+const STAGES=['New Lead','Discovery Call','Proposal Sent','Advance Paid','In Progress','Delivered','Lost'];
+const COL={'New Lead':'#6c63ff','Discovery Call':'#3b9ae1','Proposal Sent':'#e0922b','Advance Paid':'#1fa97a','In Progress':'#9b59b6','Delivered':'#2d8f5b','Lost':'#c0392b'};
+let rates={USD:88,GBP:112,EUR:96,AED:24,AUD:58,CAD:64,SGD:66};
+let db=[];
+const $=id=>document.getElementById(id);
+function load(){try{const a=localStorage.getItem('vd_intl');if(a)db=JSON.parse(a);const r=localStorage.getItem('vd_rates');if(r)rates=JSON.parse(r)}catch(e){}
+if(!db.length)db=[{id:1,name:'Sarah Miller',co:'Bloom Boutique',email:'sarah@bloom.example',cc:'US',svc:'WooCommerce Store',val:249,stage:'Proposal Sent'},{id:2,name:'Omar Al Farsi',co:'Desert Gear',email:'+971 50 000 0000',cc:'AE',svc:'WordPress Website',val:540,stage:'Discovery Call'}]}
+function save(){try{localStorage.setItem('vd_intl',JSON.stringify(db));localStorage.setItem('vd_rates',JSON.stringify(rates))}catch(e){}}
+function show(n){$('v1').classList.toggle('hide',n!=1);$('v2').classList.toggle('hide',n!=2);$('t1').classList.toggle('on',n==1);$('t2').classList.toggle('on',n==2);if(n==2)renderCRM()}
+function opts(sel,withAll){sel.innerHTML=Object.entries(C).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('')}
+function renderPrices(){const cur=$('cur').value;$('prices').innerHTML=PK.map(p=>{const v=Math.round(p.usd*rates.USD/rates[cur]);return `<div class="clay c"><b>${p.n}</b><div class="price">${SYM[cur]}${v}</div><p class="mu">${p.d}</p><a class="btn p" href="#inq" style="text-decoration:none;display:inline-block">Choose ${p.n}</a></div>`}).join('')}
+function ltime(tz){try{return new Date().toLocaleTimeString('en-US',{timeZone:tz,hour:'2-digit',minute:'2-digit'})}catch(e){return '--'}}
+function fmt(c){const cur=C[c.cc].cur;return (SYM[cur]||cur)+Number(c.val||0).toLocaleString()}
+function renderCRM(){const f=$('flt').value,fc=$('fc').value;const list=db.filter(c=>(!f||c.stage==f)&&(!fc||c.cc==fc));
+const open=db.filter(c=>!['Delivered','Lost'].includes(c.stage));const inr=x=>Math.round(x.val*(rates[C[x.cc].cur]||1));
+const tot=open.reduce((s,c)=>s+inr(c),0);const won=db.filter(c=>['Advance Paid','In Progress','Delivered'].includes(c.stage)).reduce((s,c)=>s+inr(c),0);
+$('kpis').innerHTML=[['Intl clients',db.length],['Open pipeline','₹'+tot.toLocaleString('en-IN')],['Won value','₹'+won.toLocaleString('en-IN')],['Countries',new Set(db.map(c=>c.cc)).size]].map(k=>`<div class="clay c"><div class="mu">${k[0]}</div><div class="kpi">${k[1]}</div></div>`).join('');
+$('rows').innerHTML=list.map(c=>`<tr><td><b>${esc(c.name)}</b><br><span class="mu">${esc(c.co||'')} · ${esc(c.email||'')}</span></td><td>${C[c.cc].n}</td><td>${ltime(C[c.cc].tz)}</td><td>${esc(c.svc)}</td><td>${fmt(c)}</td><td>₹${inr(c).toLocaleString('en-IN')}</td><td>${C[c.cc].pay}</td><td><select style="width:auto" onchange="setStage(${c.id},this.value)">${STAGES.map(s=>`<option ${s==c.stage?'selected':''}>${s}</option>`).join('')}</select></td><td><button class="btn" onclick="del(${c.id})">✕</button></td></tr>`).join('')||'<tr><td colspan=9 class=mu>No clients</td></tr>';
+$('rates').innerHTML=Object.keys(rates).map(k=>`<div><label class="mu">${k}</label><input type="number" value="${rates[k]}" onchange="rates['${k}']=+this.value;save();renderCRM()"></div>`).join('')}
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function setStage(id,s){db.find(c=>c.id==id).stage=s;save();renderCRM()}
+function del(id){if(confirm('Delete this client?')){db=db.filter(c=>c.id!=id);save();renderCRM()}}
+function add(o){db.unshift({id:Date.now(),...o});save()}
+function addClient(){if(!$('n_name').value.trim())return alert('Enter contact name');add({name:$('n_name').value,co:$('n_co').value,email:$('n_email').value,cc:$('n_country').value,svc:$('n_svc').value,val:+$('n_val').value||0,stage:'New Lead'});['n_name','n_co','n_email','n_val'].forEach(i=>$(i).value='');renderCRM()}
+function submitInq(){if(!$('f_name').value.trim()||!$('f_email').value.trim()){$('f_ok').textContent='Please add name and email.';return}
+add({name:$('f_name').value,co:$('f_co').value,email:$('f_email').value,cc:$('f_country').value,svc:$('f_svc').value,val:+$('f_budget').value||0,stage:'New Lead'});$('f_ok').textContent='Thanks! We will reply within 24 hours.';['f_name','f_email','f_co','f_budget','f_msg'].forEach(i=>$(i).value='')}
+load();['f_country','n_country'].forEach(i=>opts($(i)));
+$('cur').innerHTML=Object.keys(SYM).map(k=>`<option>${k}</option>`).join('');
+$('flt').innerHTML+=STAGES.map(s=>`<option>${s}</option>`).join('');
+$('fc').innerHTML+=Object.entries(C).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('');
+renderPrices();
+</script></body></html>
